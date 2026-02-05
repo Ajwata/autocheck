@@ -1581,7 +1581,37 @@ a {
   }
 
   .hero {
-    padding: 5rem 0 4rem;
+    padding: 4.2rem 0 4rem;
+    min-height: auto;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-benefits {
+    gap: 0.8rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-benefit {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-guarantee {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .scroll-arrow {
+    bottom: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .hero-proof {
@@ -1664,7 +1694,32 @@ a {
   }
 
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hero-benefits {
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-benefit {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+
+  .hero {
+    padding: 3.6rem 0 3.6rem;
+  }
+
+  .scroll-arrow {
+    bottom: 0.9rem;
+    font-size: 1.3rem;
   }
 
   h2 {
