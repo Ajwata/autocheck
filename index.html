@@ -22,37 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="stylesheet" href="styles.css">
-    <!-- Event snippet for Контакт conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17951633844/0tZsCPCqyvkbELTjgPBC',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17951633844">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17951633844');
-</script>
-    <!-- Event snippet for Контакт conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-17951633844/0tZsCPCqyvkbELTjgPBC'});
-</script>
-
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -69,7 +38,18 @@ function gtag_report_conversion(url) {
                         <span></span>
                     </button>
                     <ul class="nav-menu" id="navMenu">
-                        <li><a href="#services">Послуги</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Послуги <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="avtoelektryk.html">Автоелектрик</a></li>
+                                <li><a href="zamina-masla.html">Заміна масла</a></li>
+                                <li><a href="remont-avto.html">Ремонт авто</a></li>
+                                <li><a href="prykurka-avto.html">Прикурка авто</a></li>
+                                <li><a href="ustanovka-kamer.html">Встановлення камер</a></li>
+                                <li><a href="android-magnitola.html">Android магнітола</a></li>
+                                <li><a href="buksyruvannya.html">Буксирування</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#why-us">Чому ми</a></li>
                         <li><a href="#geography">Географія</a></li>
                         <li><a href="#contact">Контакт</a></li>
@@ -395,6 +375,3 @@ function gtag_report_conversion(url) {
     <script src="script.js"></script>
 </body>
 </html>
-
-
-

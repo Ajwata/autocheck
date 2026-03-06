@@ -1,6 +1,7 @@
 // Premium Site Interactions
 document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
+    initDropdownMenu();
     initFormSubmission();
     initSmoothScroll();
     initScrollAnimations();
@@ -17,8 +18,8 @@ function initMobileMenu() {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
-    const navLinks = navMenu.querySelectorAll('a');
+    // Close menu when clicking on a regular link (not dropdown toggle)
+    const navLinks = navMenu.querySelectorAll('a:not(.dropdown-toggle)');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
@@ -32,6 +33,49 @@ function initMobileMenu() {
         if (!isClickInside && navMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+        }
+    });
+}
+
+// Dropdown Menu Functionality
+function initDropdownMenu() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (!toggle || !menu) return;
+        
+        // For mobile: toggle on click
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            }
+        });
+        
+        // Prevent dropdown links from closing mobile menu immediately
+        const dropdownLinks = menu.querySelectorAll('a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Allow navigation but close menu after short delay
+                setTimeout(() => {
+                    dropdown.classList.remove('active');
+                }, 150);
+            });
+        });
+    });
+    
+    // Close dropdowns when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            if (!e.target.closest('.dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
         }
     });
 }
